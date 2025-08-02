@@ -2,7 +2,7 @@
 
 ##  Overview
 
-### Zepto for Blood. Bridge for Life."
+### Zepto for Blood-Bridge for Life."
 ----
 An AI-powered platform connecting Thalassemia patients to on-demand blood, medication, lab tests, and donors—making critical care fast, seamless, and human-centered.
 
@@ -72,6 +72,7 @@ cd Care-grid
 npm install
 npm run dev
 ```
+
 
 
 
