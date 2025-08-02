@@ -8,7 +8,7 @@ An AI-powered platform connecting Thalassemia patients to on-demand blood, medic
 
 ## 🌐 Live Preview
 
-🔗 [Live Demo on Netlify](https://saas-project1.netlify.app/)
+🔗 [Live Demo on Netlify]((https://caregrid.netlify.app/))
 
 💻 Local Dev URL (default): http://localhost:8083
 
@@ -72,4 +72,5 @@ cd Care-grid
 npm install
 npm run dev
 ```
+
 
