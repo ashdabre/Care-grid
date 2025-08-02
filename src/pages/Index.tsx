@@ -4,6 +4,7 @@ import HowItWorks from "@/components/HowItWorks";
 import DashboardPreview from "@/components/DashboardPreview";
 import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
+import Support from "@/components/Support";
 import Footer from "@/components/Footer";
 import SOSButton from "@/components/SOSButton";
 
@@ -17,6 +18,7 @@ const Index = () => {
         <DashboardPreview />
         <Features />
         <Testimonials />
+        <Support />
       </main>
       <Footer />
       <SOSButton />
