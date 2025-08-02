@@ -1,57 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* CareGrid Design System - Healthcare & Trust Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core CareGrid Brand Colors */
+    --background: 210 30% 98%; /* Soft Off-White #F7FAFC */
+    --foreground: 215 25% 27%; /* Dark Slate #2D3748 */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Deep Trust Blue */
+    --primary: 221 83% 33%; /* #1E3A8A */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 221 83% 45%;
+    --primary-dark: 221 83% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Vivid Crimson (Blood Accent) */
+    --secondary: 0 71% 58%; /* #E53E3E */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 0 71% 68%;
+    --secondary-dark: 0 80% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Support: Warm Gold */
+    --accent: 31 72% 65%; /* #F6AD55 */
+    --accent-foreground: 215 25% 27%;
+    --accent-light: 31 72% 75%;
+    --accent-dark: 31 72% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Success: Healing Green */
+    --success: 145 63% 49%; /* #38A169 */
+    --success-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Error: Emergency Red */
+    --destructive: 0 69% 47%; /* #C53030 */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Neutral Colors */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%; /* #4A5568 */
 
-    --radius: 0.5rem;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 33%;
 
+    --radius: 1.5rem; /* 24px for CareGrid rounded design */
+
+    /* Healthcare-specific gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)), hsl(var(--accent)));
+    --gradient-emergency: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--destructive)));
+    
+    /* Healthcare shadows */
+    --shadow-trust: 0 4px 20px -4px hsl(var(--primary) / 0.25);
+    --shadow-emergency: 0 4px 20px -4px hsl(var(--secondary) / 0.3);
+    --shadow-soft: 0 2px 10px -2px hsl(215 25% 27% / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Sidebar (keeping existing) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -100,6 +125,76 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-semibold;
+  }
+}
+
+@layer components {
+  /* CareGrid Component Styles */
+  .sos-button {
+    @apply w-20 h-20 rounded-full bg-gradient-to-r from-secondary to-destructive;
+    @apply text-white font-bold text-sm uppercase tracking-wide;
+    @apply shadow-lg hover:shadow-xl transform hover:scale-105;
+    @apply transition-all duration-300 ease-out;
+    @apply animate-pulse hover:animate-none;
+    box-shadow: var(--shadow-emergency);
+  }
+  
+  .trust-card {
+    @apply bg-card rounded-3xl p-8 border border-border;
+    @apply hover:shadow-lg transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .trust-card:hover {
+    box-shadow: var(--shadow-trust);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .emergency-gradient {
+    background: var(--gradient-emergency);
+  }
+  
+  .primary-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-sm bg-white/10 border border-white/20;
+    @apply rounded-3xl p-6;
+  }
+  
+  .pulse-ring {
+    @apply absolute inset-0 rounded-full border-4 border-secondary;
+    @apply animate-ping opacity-20;
+  }
+  
+  .impact-card {
+    @apply bg-gradient-to-br from-accent-light to-accent p-6 rounded-2xl;
+    @apply text-accent-foreground shadow-lg;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+  
+  .bounce-transition {
+    transition: var(--transition-bounce);
   }
 }
