@@ -39,7 +39,7 @@ An AI-powered platform connecting Thalassemia patients to on-demand blood, medic
 
 - Emergency alerts + Legacy Mode
 
-### 🛠️ Tech Stack
+###  Tech Stack
 - Frontend: React, React Native, TypeScript
 - Backend: Django, DRF, Python
 - DB/Realtime: PostgreSQL, Firebase, Redis
@@ -72,6 +72,7 @@ cd Care-grid
 npm install
 npm run dev
 ```
+
 
 
 
