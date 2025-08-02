@@ -1,4 +1,4 @@
-#  🩸 CareGrid (ThalaBridge)
+#   CareGrid (ThalaBridge)
 
 ##  Overview
 
@@ -6,11 +6,11 @@
 ----
 An AI-powered platform connecting Thalassemia patients to on-demand blood, medication, lab tests, and donors—making critical care fast, seamless, and human-centered.
 
-## 🌐 Live Preview
+##  Live Preview
 
-🔗 Live Demo on Netlify: https://caregrid.netlify.app/
+ Live Demo on Netlify: https://caregrid.netlify.app/
 
-💻 Local Dev URL (default): http://localhost:8083
+ Local Dev URL (default): http://localhost:8083
 
 
 ---
@@ -18,7 +18,7 @@ An AI-powered platform connecting Thalassemia patients to on-demand blood, medic
 
 ##  Features
 
-### 👩‍⚕️ For Patients
+###  For Patients
 - One-tap SOS for urgent blood needs
 
 - Real-time nurse delivery tracking
@@ -30,7 +30,7 @@ An AI-powered platform connecting Thalassemia patients to on-demand blood, medic
 - Letters of Life" for donor thanks
 
 ---
-### 🙋‍♂️ For Donors
+###  For Donors
 - WhatsApp-based onboarding
 
 - Blood drive heatmaps
@@ -48,12 +48,12 @@ An AI-powered platform connecting Thalassemia patients to on-demand blood, medic
 - Messaging: WebSockets, RabbitMQ
 - APIs: e-RaktKosh, Google Maps, WhatsApp
 
-### 🔐 Authentication
+###  Authentication
 -  **Google Sign-In** via **Supabase Auth**
 -  Session tracking & state update via `onAuthStateChange`
 
 ---
-### 📍 Hackathon MVP
+###  Hackathon MVP
  Patient-donor matching
 
  SOS request + donor map
@@ -64,7 +64,7 @@ An AI-powered platform connecting Thalassemia patients to on-demand blood, medic
 
 ---
 
-## ⚙️ Local Setup
+##  Local Setup
 
 ```bash
 git clone https://github.com/yourusername/admybrand-luxe-ui.git
@@ -72,6 +72,7 @@ cd Care-grid
 npm install
 npm run dev
 ```
+
 
 
 
